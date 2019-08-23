@@ -24,7 +24,7 @@ else{
     print '<input type="hidden" name="nickname" value="masafy">';
     print '<input type="hidden" name="email" value="'.$email.'">';
     print '<input type="hidden" name="goiken" value="'.$goiken.'">';
-    print '<input type="button" onclick="history.back()" value="戻る"';
+    print '<input type="button" onclick="history.back()" value="戻る">';
     print '<input type="submit" value="OK">';
     print '</form>';
 }
