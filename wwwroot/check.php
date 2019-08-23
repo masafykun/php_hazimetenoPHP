@@ -7,7 +7,12 @@
  <?php
  $nickname=$_POST['nickname']; 
  $email=$_POST['email'];
- $goiken=$_POST['goiken'];  
+ $goiken=$_POST['goiken'];
+ 
+ //文字のフォントサイズなどをで隠される被害をなくすやつ↓
+ $nickname=htmlspecialchars($nickname);
+ $email=htmlspecialchars($email);
+ $goiken=htmlspecialchars($goiken);
 
  print " $nickname 様";
  print 'ご意見ありがとうございました。</br>';
@@ -20,7 +25,7 @@
      print '</form>';
  }
 else{
-    print '<form method="get" action="thanks.php" >';
+    print '<form method="GET" action="thanks.php" >';
     print '<input type="hidden" name="nickname" value="masafy">';
     print '<input type="hidden" name="email" value="'.$email.'">';
     print '<input type="hidden" name="goiken" value="'.$goiken.'">';
