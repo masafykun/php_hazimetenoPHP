@@ -5,46 +5,29 @@
  </head>
 <body>
  <?php
- $nickname=$_GET['nickname']; 
- $email=$_GET['email'];
- $goiken=$_GET['goiken'];  
+ $nickname=$_POST['nickname']; 
+ $email=$_POST['email'];
+ $goiken=$_POST['goiken'];  
 
- if($nickname==''){
-     print 'ニックネームを入力してください。';
-     print '<br />';
+ print " $nickname 様";
+ print 'ご意見ありがとうございました。</br>';
+ print "ご意見 </br>【 $goiken 】 </br>";
+ print "メールアドレス </br> $email </br>";
+
+ if($nickname==''||$email==''||$goiken==''){
+     print '<form>';
+     print '<input type="button" onclick="history.back()" value="戻る"';
+     print '</form>';
  }
- else{
-    print 'ようこそ';
-    print $nickname;
-    print '様';
-    print '<br />';
- }
-
-if($email==''){
-    print 'メールアドレスを入力してください。';
-    print '<br />';
-}
 else{
-   print 'メールアドレス';
-   print $email;
-   print '<br />';
+    print '<form method="get" action="thanks.php" >';
+    print '<input type="hidden" name="nickname" value="masafy">';
+    print '<input type="hidden" name="email" value="'.$email.'">';
+    print '<input type="hidden" name="goiken" value="'.$goiken.'">';
+    print '<input type="button" onclick="history.back()" value="戻る"';
+    print '<input type="submit" value="OK">';
+    print '</form>';
 }
-
-if($goiken==''){
-    print '意見を入力してください。';
-    print '<br />';
-}
-else{
-   print '意見「';
-   print $goiken;
-   print '」<br />';
-}
-
-print '<form><input type="button" onclick="history.back()" value="戻る"></form>';
-print '<br />';
  ?>
- <form method="GET" action="thanks.php">
-    <input type="submit" value="OK"> 
-</form>
 </body>
 </html>

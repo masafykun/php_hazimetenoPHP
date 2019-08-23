@@ -5,9 +5,9 @@
  </head>
 <body>
  <?php
- $nickname=$_POST['nickname']; 
- $email=$_POST['email'];
- $goiken=$_POST['goiken'];  
+ $nickname=$_GET['nickname']; 
+ $email=$_GET['email'];
+ $goiken=$_GET['goiken'];  
 
  print " $nickname 様 <br /> ご意見ありがとうございました。 <br />";
  print "メールアドレス $email <br />";
