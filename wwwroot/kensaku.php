@@ -17,9 +17,10 @@ try {
     echo 'Connection failed: ' . $e->getMessage();
  }
 
- $sql='SELECT* FROM anketo WHERE code='.$code;
+ $sql='SELECT* FROM anketo WHERE code=?';
  $stmt=$dbh->prepare($sql);
- $stmt->execute();
+ $data[]=$code;
+ $stmt->execute($data);
 
  while(1){
      $rec = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -37,5 +38,7 @@ try {
  $dbh=null;
  ?>
 
+<br/>
+    <a href="kensaku.html">検索に戻る</a>
 </body>
 </html>
